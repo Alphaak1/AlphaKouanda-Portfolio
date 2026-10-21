@@ -1,4 +1,5 @@
 dist/
+.cloudflare/
 node_modules/
 .wrangler/
 .env
@@ -6,3 +7,7 @@ node_modules/
 .dev.vars
 .DS_Store
 Thumbs.db
+
+.dev.vars*
+!.dev.vars.example
+!.env.example
