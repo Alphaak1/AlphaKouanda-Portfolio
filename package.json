@@ -1,0 +1,9 @@
+{
+  "name": "alphakouanda-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Alpha Kouanda Portfolio",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  }
+}
