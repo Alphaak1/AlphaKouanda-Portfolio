@@ -2,7 +2,7 @@ import { mkdir, readdir, copyFile, readFile, stat } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
-const files = (await readdir(root)).filter(name => /\.(html|css|jpg|jpeg|png|webp|svg|ico|mp4)$/i.test(name));
+const files = (await readdir(root)).filter(name => /\.(html|css|js|jpg|jpeg|png|webp|svg|ico|mp4)$/i.test(name));
 for (const name of files) {
   if ((await stat(resolve(root, name))).size > 25 * 1024 * 1024) {
     throw new Error(`${name} exceeds the Cloudflare Pages 25 MiB asset limit.`);

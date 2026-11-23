@@ -9,6 +9,55 @@
     --muted: #53647a;
     --border: #dbe4ef;
 }
+/* JavaScript controls use the existing colors and page layout. */
+[hidden] { display: none !important; }
+button {
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--blue);
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+button:hover, button:focus-visible { background: var(--blue-hover); }
+.page-tools, .page-clock { width: min(1100px, 94%); margin: 12px auto; }
+.page-tools { text-align: right; }
+.page-clock { text-align: right; font-size: .9rem; }
+.projects-table article { transition: transform .2s, border-color .2s; }
+.projects-table article.card-active, .projects-table article:focus-within {
+    transform: scale(1.02);
+    border-color: var(--blue);
+}
+.project-gallery { text-align: center; }
+.project-gallery figure { margin: 0 0 16px; }
+.project-gallery img { width: 100%; max-width: 650px; height: 330px; object-fit: contain; }
+.project-gallery figcaption { margin-top: 10px; }
+.field-error { display: block; color: #b42318; font-size: .9rem; }
+#contact-form [aria-invalid="true"] { border: 2px solid #b42318; }
+#back-to-top { position: fixed; right: 20px; bottom: 20px; z-index: 2; }
+body.dark-mode {
+    --navy: #e1ebfa;
+    --blue: #3275b9;
+    --blue-hover: #205b98;
+    --pale: #111827;
+    --white: #1f2937;
+    --text: #f3f4f6;
+    --muted: #c2cddd;
+    --border: #62728a;
+}
+body.dark-mode header, body.dark-mode footer { background: #0c1524; color: #f3f4f6; }
+body.dark-mode nav a { color: #f3f4f6; }
+body.dark-mode main a, body.dark-mode summary,
+body.dark-mode .home-eyebrow, body.dark-mode .about-eyebrow,
+body.dark-mode .about-kicker { color: #9dccff; }
+body.dark-mode main .projects-button { color: white; }
+body.dark-mode .projects-table article, body.dark-mode .about-skill-card,
+body.dark-mode .about-artwork-grid figure, body.dark-mode .about-next-step { background: #273449; }
+body.dark-mode form input, body.dark-mode form textarea { background: #111827; color: #f3f4f6; }
+body.dark-mode .field-error { color: #ffb4ac; }
+@media (max-width: 760px) { .project-gallery img { height: 240px; } }
+@media (prefers-reduced-motion: reduce) { .projects-table article { transition: none; } }
 * { box-sizing: border-box; }
 body {
     margin: 0;

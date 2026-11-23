@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Projects</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -18,6 +19,10 @@
         </ul>
     </nav>
 </header>
+
+<div class="page-tools">
+    <button id="theme-toggle" type="button" aria-pressed="false">Use Dark Mode</button>
+</div>
 
 <main>
     <section>
@@ -79,7 +84,19 @@
             </tr>
         </table>
     </section>
+    <section class="project-gallery" aria-labelledby="gallery-heading">
+        <h2 id="gallery-heading">Project Gallery</h2>
+        <figure>
+            <img id="gallery-image" src="project1.png" alt="ViraBot Discord app profile">
+            <figcaption id="gallery-caption" aria-live="polite">ViraBot Discord app profile (1 of 3)</figcaption>
+        </figure>
+        <button id="gallery-previous" type="button">Previous</button>
+        <button id="gallery-next" type="button">Next</button>
+    </section>
 </main>
+
+<p class="page-clock">Current date and time: <time id="clock"></time></p>
+<button id="back-to-top" type="button" hidden>Back to Top</button>
 
 <footer>
     <p>&copy; 2026 Alpha Kouanda. All rights reserved.</p>

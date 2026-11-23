@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Contact</title>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -21,41 +22,53 @@
     </nav>
 </header>
 
+<div class="page-tools">
+    <button id="theme-toggle" type="button" aria-pressed="false">Use Dark Mode</button>
+</div>
+
 <main>
 
 <section>
 
     <h2>Contact Me</h2>
 
-   <form action="mailto:alphakouanda@gmail.com?subject=Portfolio Contact Form" method="post" enctype="text/plain">
+   <form id="contact-form" action="mailto:alphakouanda@gmail.com?subject=Portfolio Contact Form" method="post" enctype="text/plain">
 
-        <label>Name:</label>
-        <input type="text" name="Name">
-
-        <br><br>
-
-        <label>Email:</label>
-        <input type="email" name="Email">
+        <label for="contact-name">Name:</label>
+        <input id="contact-name" type="text" name="Name" required minlength="3" aria-describedby="contact-name-error">
+        <span id="contact-name-error" class="field-error" aria-live="polite"></span>
 
         <br><br>
 
-        <label>Subject:</label>
-        <input type="text" name="Subject">
+        <label for="contact-email">Email:</label>
+        <input id="contact-email" type="email" name="Email" required  aria-describedby="contact-email-error">
+        <span id="contact-email-error" class="field-error" aria-live="polite"></span>
 
         <br><br>
 
-        <label>Message:</label>
-        <textarea name="Message"></textarea>
+        <label for="contact-subject">Subject:</label>
+        <input id="contact-subject" type="text" name="Subject" required  aria-describedby="contact-subject-error">
+        <span id="contact-subject-error" class="field-error" aria-live="polite"></span>
+
+        <br><br>
+
+        <label for="contact-message">Message:</label>
+        <textarea id="contact-message" name="Message" required minlength="20" aria-describedby="contact-message-error"></textarea>
+        <span id="contact-message-error" class="field-error" aria-live="polite"></span>
 
         <br><br>
 
         <input type="submit" value="Submit">
 
     </form>
+    <p>This form opens your email app; it does not send a message directly.</p>
 
 </section>
 
 </main>
+
+<p class="page-clock">Current date and time: <time id="clock"></time></p>
+<button id="back-to-top" type="button" hidden>Back to Top</button>
 
 <footer>
     <p>&copy; 2026 Alpha Kouanda. All rights reserved.</p>
